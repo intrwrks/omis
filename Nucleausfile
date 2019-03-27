@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mvn package -Pprod -DskipTests
+
+mkdir -p nucleaus_scan_target/lib
+mv target/OMIS3.war nucleaus_scan_target/
+mv target/OMIS3/WEB-INF/lib/*.jar nucleaus_scan_target/lib/
