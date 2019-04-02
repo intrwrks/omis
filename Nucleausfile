@@ -8,5 +8,8 @@ mkdir -p $NUCLEAUS_SCAN_TARGET_DIR
 mkdir -p $NUCLEAUS_SCAN_LIBRARY_DIR
 
 ## Move compiled targets to appropriate directory
-mv target/OMIS3.war $NUCLEAUS_SCAN_TARGET_DIR
+mv target/OMIS3/WEB-INF/classes/omis/* $NUCLEAUS_SCAN_TARGET_DIR
 mv target/OMIS3/WEB-INF/lib/*.jar $NUCLEAUS_SCAN_LIBRARY_DIR
+
+## Clean up files that do not need to be scanned
+mvn clean -Pprod
